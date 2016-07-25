@@ -58,6 +58,6 @@ class ProductTest < ActiveSupport::TestCase
                           price: 1)
 
     assert product.invalid?
-    assert_equal ["has already taken been"], product.errors[:title]
+    assert_equal ["has already been taken"], product.errors[:title]
   end
 end
