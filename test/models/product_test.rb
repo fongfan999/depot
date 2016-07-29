@@ -60,4 +60,14 @@ class ProductTest < ActiveSupport::TestCase
     assert product.invalid?
     assert_equal ["has already been taken"], product.errors[:title]
   end
+
+  test "product is not valid without a unique image_url" do
+    product = Product.new(title: "My Cream title",
+                          description: "Nothing",
+                          image_url: products(:ruby).image_url,
+                          price: 1)
+
+    assert product.invalid?
+    assert_equal ["has already been taken"], product.errors[:image_url]
+  end
 end

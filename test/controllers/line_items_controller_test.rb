@@ -45,6 +45,6 @@ class LineItemsControllerTest < ActionController::TestCase
       delete :destroy, id: @line_item
     end
 
-    assert_redirected_to line_items_path
+    assert_redirected_to Cart.find(session[:cart_id])
   end
 end

@@ -12,6 +12,8 @@
       <td class="item_price">
         <%= number_to_currency(item.total_price) %>
       </td>
+      <td><%= link_to "Remove this item", item, method: :delete,
+        data: { confirm: "Are you sure?" } %></td>
     </tr>
   <% end %>
 
