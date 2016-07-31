@@ -14,14 +14,17 @@
   </div>
   <div id="columns">
     <div id="side">
+      <% if @cart %>
+        <div id="cart">
+          <%= render @cart %>
+        </div>
+      <% end %>
+      
       <ul>
         <li><%= link_to "Home", store_path %></li>
         <li><%= link_to "Questions", "#" %></li>
         <li><%= link_to "News", "#" %></li>
         <li><%= link_to "Contact", "#" %></li>
-        <% if current_cart %>
-          <li><%= link_to "Cart", current_cart %></li>
-        <% end %>
       </ul>
     </div>
     <div id="main">

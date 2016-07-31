@@ -1,0 +1,17 @@
+if ($("#cart tr").length == 0) {
+  $("#cart").
+    hide().
+    html("<%= escape_javascript render(@cart) %>").
+    fadeIn(1000, function() {
+      $("#current_item").add($(".total_cell")).
+        css({'background-color': '#88ff88'}).
+        animate({'background-color': '#114411'}, 1000);
+    });
+} else {
+  $("#cart").html("<%= escape_javascript render(@cart) %>");
+  $("#current_item").add($(".total_cell")).
+  css({'background-color': '#88ff88'}).
+  animate({'background-color': '#114411'}, 1000);
+}
+
+
