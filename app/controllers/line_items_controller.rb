@@ -1,7 +1,9 @@
 class LineItemsController < ApplicationController
   include CurrentCart
-  before_action :set_cart, only: [:create, :update, :destroy]
-  before_action :set_line_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_cart, only: [:create, :destroy,
+    :decrease_quantity]
+  before_action :set_line_item, only: [:show, :edit, :update, :destroy,
+    :decrease_quantity]
 
   # GET /line_items
   # GET /line_items.json
@@ -45,9 +47,8 @@ class LineItemsController < ApplicationController
   # PATCH/PUT /line_items/1.json
   def update
     respond_to do |format|
-      if @line_item.decrease_quantity!
+      if @line_item.update(line_item_params)
         format.html { redirect_to store_path }
-        format.js { @current_item = @line_item }
         format.json { render :show, status: :ok, location: @line_item }
       else
         format.html { render :edit }
@@ -63,6 +64,14 @@ class LineItemsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to store_path }
       format.json { head :no_content }
+    end
+  end
+
+  def decrease_quantity
+    @line_item.decrease_quantity!
+    respond_to do |format|
+      format.html { redirect_to store_path }
+      format.js { @current_item = @line_item }
     end
   end
 

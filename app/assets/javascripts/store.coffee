@@ -1,3 +1,4 @@
-$(document).on "ready page:change", ->
-  $(".store .entry > img").click ->
+$(document).on "turbolinks:load", ->
+  console.log("page loaded")
+  $(".store .entry > img").on "click", ->
     $(this).parent().find(":submit").click()

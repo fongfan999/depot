@@ -10,7 +10,9 @@
       </td>
     </tr>
   </table>
-
-  <%= button_to "Empty cart", cart, method: :delete,
+  
+  <%= link_to "Empty cart", cart, method: :delete,
     data: { confirm: "Are you sure?" }, remote: true %>
+
+  <%= button_to "Check out", new_order_path, method: :get %>
 <% end %>

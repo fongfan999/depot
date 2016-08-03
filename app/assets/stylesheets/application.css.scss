@@ -69,6 +69,7 @@
         border-top: 1px dotted #595;
         border-bottom: 1px dotted #595;
         margin-bottom: 10px;
+        margin-left: -20px;
       }
     }
   }
@@ -81,6 +82,38 @@
         color: #bfb;
         font-size: small;
       }
+    }
+  }
+}
+
+.depot_form {
+  fieldset {
+    background-color: #efe;
+
+    legend {
+      color: #dfd;
+      background-color: #141;
+      font-family: sans-serif;
+      padding: 0.2em 1em;
+    }
+  }
+
+  form {
+    label {
+      width: 5em;
+      float: left;
+      text-align: right;
+      padding-top: 0.2em;
+      margin-right: 0.1em;
+      display: block;
+    }
+
+    select, textarea, input {
+      margin-left: 0.4em;
+    }
+
+    br {
+      display: none;
     }
   }
 }
