@@ -3,6 +3,7 @@
 one:
   product: ruby
   order: one
+  price: ruby.price
 
 two:
   product: ruby

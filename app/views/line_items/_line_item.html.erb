@@ -4,8 +4,8 @@
   <td class="item_price">
     <%= number_to_currency(line_item.total_price) %>
   </td>
-  <td><%= button_to "&#8964;".html_safe, [:decrease_quantity, line_item],
+  <!-- <td><%#= button_to "&#8964;".html_safe, [:decrease_quantity, line_item],
     method: :patch, title: "decrease quantity", remote: true %></td>
-  <td><%= button_to "x", line_item, method: :delete,
-    data: { confirm: "Are you sure?" } %></td>
+  <td><%#= button_to "x", line_item, method: :delete,
+    data: { confirm: "Are you sure?" } %></td> -->
 </tr>
