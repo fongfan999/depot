@@ -12,7 +12,7 @@
         <h3><%= product.title %></h3>
         <%= sanitize(product.description) %>
         <div class="price_line">
-          <span class="price"><%= number_to_currency(product.price) %></span>
+          <span class="price"><%= currency_to_locale(product.price) %></span>
           <%= button_to t(".add_html"), line_items_path(product_id: product),
             remote: true %>
         </div>
